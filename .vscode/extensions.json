@@ -6,6 +6,8 @@
     "clinyong.vscode-css-modules",
     "wix.vscode-import-cost",
     "christian-kohler.path-intellisense",
-    "xyz.local-history"
+    "xyz.local-history",
+    "silvenon.mdx",
+    "bierner.markdown-preview-github-styles"
   ]
 }
