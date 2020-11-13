@@ -33,6 +33,18 @@ jobs:
           name: Build storybook
           command: npm run build-storybook
 
+      - run:
+          name: Build library
+          command: npm run build
+
+      - run:
+          name: Publish library
+          command: cd build && npx semantic-release
+
+      - run:
+          name: Netlify deploy
+          command: npm run deploy
+
 workflows:
   version: 2
   build:
