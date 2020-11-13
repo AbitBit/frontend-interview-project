@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
-    "outDir": "build/lib",
+    "outDir": "build",
+    "declarationDir": "build",
     "module": "esnext",
     "target": "es5",
     "lib": ["es5", "es6", "es7", "es2017", "dom"],
@@ -8,7 +9,7 @@
     "allowJs": false,
     "jsx": "react",
     "moduleResolution": "node",
-    "rootDir": "src",
+    "rootDir": "",
     "baseUrl": "src",
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
@@ -28,6 +29,6 @@
     "isolatedModules": true,
     "noEmit": true
   },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "build", "scripts"]
+  "include": ["src/**/*", "index.ts"],
+  "exclude": ["node_modules", "build", "scripts", "src/stories"]
 }
