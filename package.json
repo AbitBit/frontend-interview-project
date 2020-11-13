@@ -25,6 +25,16 @@
     "clean": "rm -rf ./build",
     "copy-files": "cp README.md build/"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{ts,tsx}": [
+      "eslint --max-warnings=0 --fix-dry-run"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
@@ -74,6 +84,8 @@
     "eslint-plugin-react": "^7.17.0",
     "eslint-plugin-react-hooks": "^1.7.0",
     "fork-ts-checker-webpack-plugin": "^3.1.1",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.5.1",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "rollup": "^2.33.1",
