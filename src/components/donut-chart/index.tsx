@@ -12,7 +12,7 @@ interface SvgData {
   pct: number;
 }
 
-interface Props {
+export interface DonutChartProps {
   className?: Optional<string>;
   count: string;
   data: Array<ChartData>;
@@ -45,7 +45,7 @@ function getSlicesAsPercentages(data: Array<ChartData>): Array<SvgData> {
   }));
 }
 
-const DonutChart: FC<Props> = (props) => {
+const DonutChart: FC<DonutChartProps> = (props) => {
   const { className, data, count, ...otherProps } = props;
 
   const rootClass = classnames(

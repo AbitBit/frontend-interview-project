@@ -2,13 +2,13 @@ import React from 'react';
 import classnames from 'classnames';
 import '@fortawesome/fontawesome-free/css/all.css';
 
-interface Props {
+export interface IconProps {
   className?: Optional<string>;
   name: string;
   isSolid?: boolean;
 }
 
-const Icon: React.FC<Props> = (props) => {
+const Icon: React.FC<IconProps> = (props) => {
   const { name, className, isSolid } = props;
 
   const rootClass = classnames(

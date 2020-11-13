@@ -3,13 +3,13 @@ import classnames from 'classnames';
 
 import styles from './spinner.module.scss';
 
-interface Props {
+export interface SpinnerProps {
   className?: Optional<string>;
   size?: number;
   color?: string;
 }
 
-const Spinner: FC<Props> = (props) => {
+const Spinner: FC<SpinnerProps> = (props) => {
   const { className, size, color, ...otherProps } = props;
 
   const rootClass = classnames(

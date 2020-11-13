@@ -11,3 +11,8 @@ type User = {
   displayName?: Optional<string>;
   email?: Optional<string>;
 };
+
+declare module '*.scss' {
+  const content: { [className: string]: string };
+  export default content;
+}

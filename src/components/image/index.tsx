@@ -2,13 +2,13 @@ import React, { FC, useEffect, useState } from 'react';
 import classnames from 'classnames';
 import styles from './image.module.scss';
 
-interface Props {
+export interface ImageProps {
   src: Src;
   className?: string;
   alt?: string;
 }
 
-interface State {
+export interface State {
   src: string | undefined;
   isLoadingError: boolean;
   isLoadingComplete: boolean;
@@ -20,7 +20,7 @@ const initialState: State = {
   isLoadingComplete: false,
 };
 
-const Image: FC<Props> = (props) => {
+const Image: FC<ImageProps> = (props) => {
   const { className, src, alt, ...otherProps } = props;
   const [state, setState] = useState<State>(initialState);
 

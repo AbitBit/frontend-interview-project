@@ -4,7 +4,7 @@ import Icon from '../icon';
 import Image from '../image';
 import styles from './avatar.module.scss';
 
-interface Props {
+export interface AvatarProps {
   user?: Optional<User>;
   className?: Optional<string>;
   color?: string;
@@ -98,7 +98,7 @@ function generateIdGradient(id: string): string {
   return `linear-gradient(${angle}deg, rgb(${color1[0]},${color1[1]},${color1[2]}) 0%, rgb(${color2[0]},${color2[1]},${color2[2]}) 100%)`;
 }
 
-const Avatar: FC<Props> = (props) => {
+const Avatar: FC<AvatarProps> = (props) => {
   const {
     user,
     className,
