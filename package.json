@@ -1,8 +1,8 @@
 {
-  "name": "interview-task",
-  "version": "0.1.0",
+  "name": "d-i-task",
+  "version": "0.0.0-automated",
   "description": "Dixa Frontend interview project",
-  "author": "Dixa",
+  "author": "Abi",
   "main": "index.js",
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.12.0",
@@ -23,7 +23,8 @@
     "prebuild": "npm run clean",
     "build:lib": "rollup -c",
     "clean": "rm -rf ./build",
-    "copy-files": "cp README.md build/"
+    "copy-files": "cp README.md build/",
+    "deploy": "netlify deploy --dir=./storybook-static -p"
   },
   "husky": {
     "hooks": {
@@ -87,6 +88,7 @@
     "husky": "^4.3.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.1",
+    "netlify-cli": "^2.68.5",
     "prettier": "^1.19.1",
     "react-test-renderer": "^16.12.0",
     "rollup": "^2.33.1",
