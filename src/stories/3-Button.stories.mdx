@@ -1,0 +1,139 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { Button } from '../components/button';
+import Icon from '../components/icon';
+import { useState } from 'react';
+
+<Meta title="Button" component={Button} />
+
+# Button Component
+The `<Button/>` component is a flexible component that has many use cases.  
+It could be used as a link, accepts icons, has a loading state for api calls.  
+
+Below you will find examples on its usage. ⚡⚡
+
+## Import 
+
+```js
+ import { button } from 'd-i-task/src/components/button';
+    OR 
+ import { button } from 'd-i-task';
+```
+
+## Simple button
+
+The `<Button/>` component can take 4 different styles that are passed to its `intent` prop. 😃  
+The button will grow in width depending on the text lenght. To control the width, use the `className` prop.
+
+<Canvas>
+  <Story name="Simple button">
+    {() => {
+        const style = {margin: "8px"};
+        return (
+          <div>
+            <Button style={style}>Primary</Button>
+            <Button intent="secondary" style={style}>Secondary</Button>
+            <Button intent="danger" style={style}>Danger</Button>
+            <Button intent="accept" style={style}>Accept</Button>
+          </div>
+        );
+    }}
+  </Story>
+</Canvas>
+
+## Disabled button
+
+The button can be disabled througth `isDisabled` prop.  
+An opacity will be applied to the button, hover effect will be disabled and `pointer-events` will be `none`.
+
+<Canvas>
+  <Story name="Disabled button">
+    {() => {
+      return <Button isDisabled>Disabled</Button>;
+    }}
+  </Story>
+</Canvas>
+
+## With icon
+
+The `<Button/>` component can take an icon througth `iconStart` and `iconEnd`.  
+⚠️ You can use the icon component provided by the library, or pass your own element. No spacing is implemented to allow more flexibility to the developer.  
+If you want to add spacing pass it to the icon.
+
+<Canvas>
+  <Story name="With icon">
+    {() => {
+        const style = {margin: "8px"};
+        return (
+            <>
+                <Button iconStart={<Icon name="undo"/>} style={style}>Hello</Button>
+                <Button
+                    style={style} 
+                    iconEnd={
+                        <span style={{paddingLeft: "8px"}}>
+                            <Icon name="undo"/>
+                        </span>
+                    }
+                > 
+                    Hello 
+                </Button>
+            </>
+        );
+    }}
+  </Story>
+</Canvas>
+
+## With link
+
+The component can be used as a link. Use the `href` prop.
+
+<Canvas>
+  <Story name="With link">
+    {() => {
+        return <Button href="#with-link">With link</Button>;
+    }}
+  </Story>
+</Canvas>
+
+## Loading
+
+The component has a loader that can be used for API calls for instance. Pass `true` to `isLoading`.
+⚠️ When the button is loading, it will not be disabled. If you wish to implement this behavior, please use `isDisabled` as shown above.
+
+<Canvas>
+  <Story name="Loading">
+    {() => {
+        const [isLoading, setIsLoading] = React.useState(false);
+        const handleClick = () => {
+            setIsLoading(true);
+            setTimeout(() => setIsLoading(false), 2000);
+        };
+        const style = {margin: "8px"};
+        return (
+            <>
+                <Button onClick={handleClick} isLoading={isLoading} style={style}> I am loading </Button>
+                <Button
+                    style={style} 
+                    onClick={handleClick} 
+                    isLoading={isLoading}
+                    isDisabled={isLoading} 
+                    iconStart={<Icon name="undo"/>}
+                > 
+                        disabled
+                </Button>
+            </>
+        );
+    }}
+  </Story>
+</Canvas>
+
+# Button Props
+
+The component extends the `<button />` props and have added ones on top.
+
+<ArgsTable of={Button} />

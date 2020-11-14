@@ -16,3 +16,5 @@ export * from './src/components/image';
 
 export { default as Spinner } from './src/components/spinner';
 export * from './src/components/spinner';
+
+export * from './src/components/button';
