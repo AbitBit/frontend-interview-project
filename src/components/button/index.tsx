@@ -19,7 +19,7 @@ export type ButtonProps = {
   isLoading?: boolean;
   /** If the href is passed, the component will be wrapped with a link. */
   href?: string;
-  /** If the true, the button will be disabled. */
+  /** If true, the button will be disabled. */
   isDisabled?: boolean; // ! Prop was renamed to maintain consistency with isLoading.
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'disabled'>;
 

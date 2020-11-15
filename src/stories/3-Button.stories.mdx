@@ -20,9 +20,11 @@ Below you will find examples on its usage. ⚡⚡
 ## Import 
 
 ```js
- import { button } from 'd-i-task/src/components/button';
-    OR 
- import { button } from 'd-i-task';
+import { button } from 'd-i-task/src/components/button';
+
+  or
+
+import { button } from 'd-i-task';
 ```
 
 ## Simple button
@@ -33,15 +35,15 @@ The button will grow in width depending on the text lenght. To control the width
 <Canvas>
   <Story name="Simple button">
     {() => {
-        const style = {margin: "8px"};
-        return (
-          <div>
-            <Button style={style}>Primary</Button>
-            <Button intent="secondary" style={style}>Secondary</Button>
-            <Button intent="danger" style={style}>Danger</Button>
-            <Button intent="accept" style={style}>Accept</Button>
-          </div>
-        );
+      const style = {margin: "8px"};
+      return (
+        <div>
+          <Button style={style}>Primary</Button>
+          <Button intent="secondary" style={style}>Secondary</Button>
+          <Button intent="danger" style={style}>Danger</Button>
+          <Button intent="accept" style={style}>Accept</Button>
+        </div>
+      );
     }}
   </Story>
 </Canvas>
@@ -54,7 +56,7 @@ An opacity will be applied to the button, hover effect will be disabled and `poi
 <Canvas>
   <Story name="Disabled button">
     {() => {
-      return <Button isDisabled>Disabled</Button>;
+      return <Button intent="accept" isDisabled>Disabled😃</Button>;
     }}
   </Story>
 </Canvas>
@@ -68,22 +70,23 @@ If you want to add spacing pass it to the icon.
 <Canvas>
   <Story name="With icon">
     {() => {
-        const style = {margin: "8px"};
-        return (
-            <>
-                <Button iconStart={<Icon name="undo"/>} style={style}>Hello</Button>
-                <Button
-                    style={style} 
-                    iconEnd={
-                        <span style={{paddingLeft: "8px"}}>
-                            <Icon name="undo"/>
-                        </span>
-                    }
-                > 
-                    Hello 
-                </Button>
-            </>
-        );
+      const style = {margin: "8px"};
+      return (
+        <>
+          <Button iconStart={<Icon name="undo"/>} style={style}>Hello</Button>
+          <Button
+            intent="danger"
+            style={style} 
+            iconEnd={
+              <span style={{paddingLeft: "8px"}}>
+                <Icon name="undo"/>
+              </span>
+            }
+          > 
+            Icon 
+          </Button>
+        </>
+      );
     }}
   </Story>
 </Canvas>
@@ -95,39 +98,44 @@ The component can be used as a link. Use the `href` prop.
 <Canvas>
   <Story name="With link">
     {() => {
-        return <Button href="#with-link">With link</Button>;
+      return <Button intent="secondary" href="#with-link">With link</Button>;
     }}
   </Story>
 </Canvas>
 
 ## Loading
 
-The component has a loader that can be used for API calls for instance. Pass `true` to `isLoading`.
+The component has a loader that can be used for API calls for instance. Pass `true` to `isLoading`.  
 ⚠️ When the button is loading, it will not be disabled. If you wish to implement this behavior, please use `isDisabled` as shown above.
 
 <Canvas>
   <Story name="Loading">
     {() => {
-        const [isLoading, setIsLoading] = React.useState(false);
-        const handleClick = () => {
-            setIsLoading(true);
-            setTimeout(() => setIsLoading(false), 2000);
-        };
-        const style = {margin: "8px"};
-        return (
-            <>
-                <Button onClick={handleClick} isLoading={isLoading} style={style}> I am loading </Button>
-                <Button
-                    style={style} 
-                    onClick={handleClick} 
-                    isLoading={isLoading}
-                    isDisabled={isLoading} 
-                    iconStart={<Icon name="undo"/>}
-                > 
-                        disabled
-                </Button>
-            </>
-        );
+      const [isLoading, setIsLoading] = React.useState(false);
+      const handleClick = () => {
+        setIsLoading(true);
+        setTimeout(() => setIsLoading(false), 2000);
+      };
+      const style = {margin: "8px"};
+      return (
+        <>
+          <Button intent="danger" onClick={handleClick} isLoading={isLoading} style={style}> I am loading </Button>
+          <Button
+            intent="accept"
+            style={style} 
+            onClick={handleClick} 
+            isLoading={isLoading}
+            isDisabled={isLoading} 
+            iconStart={
+              <span style={{paddingRight: "8px"}}>
+                <Icon name="undo"/>
+              </span>
+              }
+          > 
+            disabled
+          </Button>
+        </>
+      );
     }}
   </Story>
 </Canvas>
