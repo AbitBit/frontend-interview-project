@@ -1,0 +1,27 @@
+@import '../../styles/import';
+
+.listItem {
+  padding: 15px 0;
+  color: $dixa-black;
+  font-size: 12px;
+  cursor: pointer;
+
+  &.isSelected {
+    font-weight: bold;
+    color: $dixa-blue;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 1px dashed;
+  }
+
+  @include isHoverPointerDevice {
+    &:hover {
+      color: $dixa-blue-faded;
+    }
+  }
+}

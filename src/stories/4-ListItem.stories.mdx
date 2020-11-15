@@ -1,0 +1,130 @@
+import {
+  Meta,
+  Story,
+  Canvas,
+  ArgsTable,
+  Props,
+} from '@storybook/addon-docs/blocks';
+import { ListItem } from '../components/listItem';
+import useList from '../hooks/useList.ts';
+import { Fragment, useState } from 'react';
+
+<Meta title="ListItem" component={ListItem} />
+
+# List Component
+
+This component implements a tweaked (no mandatory selected value) version of the listbox of [WAI-ARIA](https://www.w3.org/TR/2017/WD-wai-aria-practices-1.1-20170628/#Listbox).  
+It provides keyboard and voice accessibility out of the box using two hooks; `useList` (passed to the parent component) and `useListItem` (which is already passed to the item.)  
+Both hooks are exported in the library. `useListItem` is exported in case the developer wants its own version of the `<li />` element.
+
+The component can be used for instance as a sidebar.
+Below you will find examples on its usage. ⚡⚡
+
+## Import
+
+```
+import { ListItem } from 'd-i-task/src/components/listItem';
+
+  or
+
+import { ListItem } from 'd-i-task';
+```
+
+## Demo
+
+Demo of the `<ListItem />` component.
+
+<Canvas>
+  <Story name="List">
+    {() => {
+      const options = [
+        { label: '"Luke is crazy" says Solo', id: '1' },
+        { label: 'Team Solo', id: '2' },
+        { label: 'I have a light saber', id: '3' },
+        { label: 'Yoda is old', id: '4' },
+        { label: 'Leia is cool', id: '5' },
+        { label: 'C-3PO and R2-D2 are so funny', id: '6' },
+        { label: 'I forgot Chewbacca', id: '7' },
+        { label: 'Why the list is long ?', id: '8' },
+        { label: 'I cannot think of anything else', id: '9' },
+        { label: 'Hello world', id: '10' },
+      ];
+      const [selectedPost, setSelectedPost] = useState();
+      const listProps = useList(options.length);
+      const style = {
+        width: '200px',
+        height: '350px',
+        padding: '8px 8px',
+        overflowY: 'auto',
+        listStyleType: 'none',
+        outline: 'none',
+      };
+      return (
+        <ul style={style} role="listbox" tabIndex={0} aria-label="posts">
+          {options?.map(({ label, id }, index) => {
+            return (
+              <Fragment key={id}>
+                <ListItem
+                  {...listProps}
+                  index={index}
+                  value={id}
+                  selectedElement={selectedPost}
+                  setSelectedElement={setSelectedPost}
+                >
+                  {label}
+                </ListItem>
+                {index !== options.length - 1 && <hr />}
+              </Fragment>
+            );
+          })}
+        </ul>
+      );
+    }}
+  </Story>
+</Canvas>
+
+# ListItem Props
+
+This is the list of props for `<ListItem />`.
+
+<ArgsTable of={ListItem} />
+
+# useList hook
+
+`useList` is a custom hook that is passed to the parent of a the listItem. It takes `listLenght` of type number.  
+It provides the `<ListItems />` with the props needed to implement the keyboard and voice navigation.
+
+## Return types
+
+| Return               |                         Type                         | Description                                       |
+| -------------------- | :--------------------------------------------------: | ------------------------------------------------- |
+| listLength           |                        number                        | Returns the list lenght.                          |
+| focusIndex           |                        number                        | Returns currently focused index                   |
+| changeFocusedElement | (value: number, event: 'click' \| 'keyDown') => void | function to change the currently focused element. |
+
+# useListItems hook
+
+`useListItems` is a custom hook that is passed to an `<li />` element. It is used to implement keyboard and voice accessibility for listboxes.  
+⚠️ It should be used with `useList` passed to the parent of component of the list.
+
+## Params types
+
+| Params               |                         Type                         | Description                                            |
+| -------------------- | :--------------------------------------------------: | ------------------------------------------------------ |
+| ref                  |              `RefObject<HTMLLIElement>`              | ref to the option element                              |
+| index                |                        number                        | index of the element in the listbox.                   |
+| focusedIndex         |                        number                        | index of the element currently focused in the listbox. |
+| listLength           |                        number                        | number of elements in the listbox.                     |
+| value                |                        string                        | element value.                                         |
+| changeFocusedElement | (value: number, event: 'click' \| 'keyDown') => void | change the element in focus                            |
+| setSelectedElement   |               (value: string) => void                | set the value of the selected element.                 |
+
+## Return types
+
+| Return        |                         Type                          | Description                                               |
+| ------------- | :---------------------------------------------------: | --------------------------------------------------------- |
+| role          |                        option                         | Role of the element. Returns option for the item.         |
+| tabIndex      |                        0 \| -1                        | Current tab index of the element.                         |
+| aria-selected |                        boolean                        | Current `aria-select` value used for voice accessibility. |
+| onKeyDown     | `(event: React.KeyboardEvent<HTMLLIElement>) => void` | Function to implement keyboard navigation.                |
+| onClick       |  `(event: React.MouseEvent<HTMLLIElement>) => void`   | Handle onClick event                                      |
