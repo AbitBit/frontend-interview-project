@@ -483,7 +483,7 @@ exports[`Storyshots Button Disabled button 1`] = `
   disabled={true}
 >
   <span>
-    Disabled
+    Disabled😃
   </span>
 </button>
 `;
@@ -514,9 +514,17 @@ Array [
     }
   >
     <span>
-      <i
-        className="fa fa-undo"
-      />
+      <span
+        style={
+          Object {
+            "paddingRight": "8px",
+          }
+        }
+      >
+        <i
+          className="fa fa-undo"
+        />
+      </span>
       disabled
     </span>
   </button>,
@@ -602,7 +610,7 @@ Array [
     }
   >
     <span>
-      Hello
+      Icon
       <span
         style={
           Object {
@@ -812,6 +820,144 @@ exports[`Storyshots Chart Regular 1`] = `
     </svg>
   </div>
 </div>
+`;
+
+exports[`Storyshots ListItem List 1`] = `
+<ul
+  aria-label="posts"
+  role="listbox"
+  style={
+    Object {
+      "height": "350px",
+      "listStyleType": "none",
+      "outline": "none",
+      "overflowY": "auto",
+      "padding": "8px 8px",
+      "width": "200px",
+    }
+  }
+  tabIndex={0}
+>
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={0}
+    value="1"
+  >
+    "Luke is crazy" says Solo
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="2"
+  >
+    Team Solo
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="3"
+  >
+    I have a light saber
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="4"
+  >
+    Yoda is old
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="5"
+  >
+    Leia is cool
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="6"
+  >
+    C-3PO and R2-D2 are so funny
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="7"
+  >
+    I forgot Chewbacca
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="8"
+  >
+    Why the list is long ?
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="9"
+  >
+    I cannot think of anything else
+  </li>
+  <hr />
+  <li
+    aria-selected={false}
+    className=""
+    onClick={[Function]}
+    onKeyDown={[Function]}
+    role="option"
+    tabIndex={-1}
+    value="10"
+  >
+    Hello world
+  </li>
+</ul>
 `;
 
 exports[`Storyshots Spinner Regular 1`] = `
