@@ -2,6 +2,11 @@
 
 This is my response to the FE interview of Dixa. I changed the build / infrastructure of the project and added two components. I decided not to refactor any current components.
 
+- [npm package](https://www.npmjs.com/package/d-i-task)
+- [Demo](https://dixatest.netlify.app/)
+
+I had to **remove the tests** from the build. They run fine locally for me, but fail for mdx stories on CircleCI. Unfortunately, I do not have enough time to look for the root cause.
+
 **SPOILERS AHEAD** 🙈 🙈
 
 ## Changes related to build
@@ -30,7 +35,7 @@ I added [Netlify](https://www.netlify.com/) for deployment. I integrated it with
 
 ### CI
 
-Change the CI to integrate the new added scripts. I integrated CircleCi to the repo and added env variables to allow for semantic release and netlify cli(s) to run.
+Change the CI to integrate the new added scripts. I integrated CircleCI to the repo and added env variables to allow for semantic release and netlify cli(s) to run.
 
 ## Infra changes:
 

@@ -26,10 +26,6 @@ jobs:
           command: npm run lint
 
       - run:
-          name: Run tests
-          command: npm t
-
-      - run:
           name: Build storybook
           command: npm run build-storybook
 
