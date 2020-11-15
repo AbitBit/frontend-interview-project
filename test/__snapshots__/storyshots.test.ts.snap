@@ -477,6 +477,162 @@ exports[`Storyshots Avatar With User 1`] = `
 </div>
 `;
 
+exports[`Storyshots Button Disabled button 1`] = `
+<button
+  className="undefined"
+  disabled={true}
+>
+  <span>
+    Disabled
+  </span>
+</button>
+`;
+
+exports[`Storyshots Button Loading 1`] = `
+Array [
+  <button
+    className=""
+    onClick={[Function]}
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+       I am loading 
+    </span>
+  </button>,
+  <button
+    className=""
+    disabled={false}
+    onClick={[Function]}
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      <i
+        className="fa fa-undo"
+      />
+      disabled
+    </span>
+  </button>,
+]
+`;
+
+exports[`Storyshots Button Simple button 1`] = `
+<div>
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      Primary
+    </span>
+  </button>
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      Secondary
+    </span>
+  </button>
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      Danger
+    </span>
+  </button>
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      Accept
+    </span>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Button With icon 1`] = `
+Array [
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      <i
+        className="fa fa-undo"
+      />
+      Hello
+    </span>
+  </button>,
+  <button
+    className=""
+    style={
+      Object {
+        "margin": "8px",
+      }
+    }
+  >
+    <span>
+      Hello
+      <span
+        style={
+          Object {
+            "paddingLeft": "8px",
+          }
+        }
+      >
+        <i
+          className="fa fa-undo"
+        />
+      </span>
+    </span>
+  </button>,
+]
+`;
+
+exports[`Storyshots Button With link 1`] = `
+<a
+  href="#with-link"
+>
+  <button
+    className=""
+  >
+    <span>
+      With link
+    </span>
+  </button>
+</a>
+`;
+
 exports[`Storyshots Chart Regular 1`] = `
 <div>
   <div
