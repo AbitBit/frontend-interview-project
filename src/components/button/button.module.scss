@@ -15,9 +15,16 @@
   color: white;
   outline: none;
 
-  &:hover:not(.disabled) {
-    transform: translateY(-2px);
-    transition: all 0.2s ease 0s;
+  @include isHoverPointerDevice {
+    &:hover:not(.disabled) {
+      transform: translateY(-2px);
+      transition: all 0.2s ease 0s;
+    }
+  }
+
+  // Provides feedback on interaction especially for non hover/pointer devices.
+  &:active {
+    opacity: 0.8;
   }
 
   &.primary {
